@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar/Navbar";
 
 const vazir = Vazirmatn({ subsets: ["arabic"] });
 
@@ -16,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html dir="rtl" lang="fa-Ir">
-      <body className={vazir.className}>{children}</body>
+      <body className={vazir.className}>
+      <Navbar />
+        <div className="flex min-h-dvh flex-col justify-between">
+        {children}
+        </div>
+
+      </body>
     </html>
   );
 }
